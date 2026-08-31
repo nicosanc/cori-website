@@ -126,7 +126,7 @@ export default function Home() {
         <div className="relative">
         <div className="no-scrollbar mt-10 flex gap-5 overflow-x-auto snap-x snap-mandatory px-6 md:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
           {galleryImages.map((src, i) => (
-            <figure key={src} className="snap-start shrink-0">
+            <figure key={src} className="snap-center md:snap-start shrink-0">
               <div className="relative w-64 md:w-80 aspect-[3/4] overflow-hidden">
                 <Image
                   src={src}
@@ -142,7 +142,8 @@ export default function Home() {
             </figure>
           ))}
         </div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 md:w-28 bg-gradient-to-l from-cream to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-28 bg-gradient-to-l from-cream to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-28 bg-gradient-to-r from-cream to-transparent" />
         </div>
       </section>
 
