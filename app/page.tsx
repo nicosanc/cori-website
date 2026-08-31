@@ -143,7 +143,6 @@ export default function Home() {
           ))}
         </div>
         <div className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-28 bg-gradient-to-l from-cream to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-28 bg-gradient-to-r from-cream to-transparent" />
         </div>
       </section>
 
