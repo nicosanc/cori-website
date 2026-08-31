@@ -119,8 +119,11 @@ export default function Home() {
       <section className="pt-28">
         <div className="mx-auto max-w-6xl px-6 flex items-baseline justify-between">
           <p className="label text-rose">A glimpse into Corbeauty</p>
-          <p className="label text-ink-soft/60 hidden md:block">Scroll →</p>
+          <p className="label text-ink-soft/60">
+            Scroll <span className="nudge-x">→</span>
+          </p>
         </div>
+        <div className="relative">
         <div className="no-scrollbar mt-10 flex gap-5 overflow-x-auto snap-x snap-mandatory px-6 md:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
           {galleryImages.map((src, i) => (
             <figure key={src} className="snap-start shrink-0">
@@ -138,6 +141,8 @@ export default function Home() {
               </figcaption>
             </figure>
           ))}
+        </div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 md:w-28 bg-gradient-to-l from-cream to-transparent" />
         </div>
       </section>
 

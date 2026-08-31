@@ -57,6 +57,21 @@ body {
   transform: scale(1.04);
 }
 
+@keyframes nudge-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+.nudge-x {
+  display: inline-block;
+  animation: nudge-x 1.8s ease-in-out infinite;
+}
+
 .no-scrollbar {
   scrollbar-width: none;
 }
