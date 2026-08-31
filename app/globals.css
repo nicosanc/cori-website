@@ -37,12 +37,6 @@ body {
 
 .gradient-brand {
   background-image: linear-gradient(135deg, #e8b4a0 0%, #a85c52 50%, #7d3a4a 100%);
-  border-radius: 9999px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.gradient-brand:hover {
-  transform: scale(1.04);
 }
 
 .gradient-text {
@@ -50,6 +44,15 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.btn-pill {
+  border-radius: 9999px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-pill:hover {
+  transform: scale(1.04);
 }
 
 @keyframes marquee {
@@ -69,6 +72,22 @@ body {
 
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+.arch {
+  border-radius: 100rem 100rem 0 0;
+}
+
+.cameo {
+  border-radius: 50%;
+}
+
+.petal-a {
+  border-radius: 6rem 0.25rem 6rem 0.25rem;
+}
+
+.petal-b {
+  border-radius: 0.25rem 6rem 0.25rem 6rem;
 }
 
 .label {

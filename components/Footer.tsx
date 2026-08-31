@@ -2,38 +2,34 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-hairline mt-24">
-      <div className="mx-auto max-w-6xl px-6 py-16 grid gap-12 md:grid-cols-3">
-        <div>
-          <p className="gradient-text font-body text-lg tracking-[0.35em] font-normal">
-            CORBEAUTY
-          </p>
-          <p className="mt-3 text-sm text-ink-soft max-w-xs">
-            Soft, natural beauty. Curated just for you, in Miami.
-          </p>
-        </div>
-        <div>
-          <p className="label text-rose mb-4">Explore</p>
-          <ul className="space-y-3 text-sm text-ink-soft">
-            <li><Link href="/about" className="hover:text-rose transition-colors">About</Link></li>
-            <li><Link href="/services" className="hover:text-rose transition-colors">Services</Link></li>
-            <li><Link href="/book" className="hover:text-rose transition-colors">Book an appointment</Link></li>
-          </ul>
-        </div>
-        <div>
-          <p className="label text-rose mb-4">Follow</p>
+    <footer className="border-t border-hairline mt-28 text-center">
+      <div className="mx-auto max-w-3xl px-6 py-16">
+        <p className="gradient-text font-body text-xl tracking-[0.4em] font-normal">
+          CORBEAUTY
+        </p>
+        <p className="mt-4 text-sm text-ink-soft">
+          Soft, natural beauty. Curated just for you, in Miami.
+        </p>
+        <nav className="mt-8 flex flex-wrap justify-center gap-8">
+          <Link href="/about" className="label text-ink-soft hover:text-rose transition-colors">
+            About
+          </Link>
+          <Link href="/services" className="label text-ink-soft hover:text-rose transition-colors">
+            Services
+          </Link>
+          <Link href="/book" className="label text-ink-soft hover:text-rose transition-colors">
+            Book
+          </Link>
           <a
             href="https://www.instagram.com/corbeautymiami"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-ink-soft hover:text-rose transition-colors"
+            className="label text-ink-soft hover:text-rose transition-colors"
           >
-            @corbeautymiami
+            Instagram
           </a>
-        </div>
-      </div>
-      <div className="border-t border-hairline">
-        <p className="mx-auto max-w-6xl px-6 py-6 label text-ink-soft/70">
+        </nav>
+        <p className="label text-ink-soft/60 mt-10">
           © {new Date().getFullYear()} Corbeauty Miami
         </p>
       </div>

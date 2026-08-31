@@ -8,6 +8,7 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/book", label: "Book Now" },
 ];
 
 export default function Nav() {
@@ -16,14 +17,16 @@ export default function Nav() {
 
   return (
     <header className="sticky top-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-hairline">
-      <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <Link href="/" onClick={() => setOpen(false)}>
-          <span className="gradient-text font-body text-lg tracking-[0.35em] font-normal">
-            CORBEAUTY
-          </span>
-        </Link>
-
-        <nav className="hidden md:flex items-center gap-10">
+      {/* Desktop: two-tier centered */}
+      <div className="hidden md:block">
+        <div className="flex justify-center pt-6 pb-4">
+          <Link href="/">
+            <span className="gradient-text font-body text-2xl tracking-[0.4em] font-normal">
+              CORBEAUTY
+            </span>
+          </Link>
+        </div>
+        <nav className="flex justify-center gap-12 pb-5">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -35,16 +38,18 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/book"
-            className="label gradient-brand text-white px-6 py-3 hover:opacity-90 transition-opacity"
-          >
-            Book Now
-          </Link>
         </nav>
+      </div>
 
+      {/* Mobile: single row + dropdown */}
+      <div className="md:hidden flex items-center justify-between px-6 h-16">
+        <Link href="/" onClick={() => setOpen(false)}>
+          <span className="gradient-text font-body text-lg tracking-[0.35em] font-normal">
+            CORBEAUTY
+          </span>
+        </Link>
         <button
-          className="md:hidden text-ink-soft label"
+          className="text-ink-soft label"
           onClick={() => setOpen(!open)}
           aria-expanded={open}
           aria-label="Toggle menu"
@@ -52,9 +57,8 @@ export default function Nav() {
           {open ? "Close" : "Menu"}
         </button>
       </div>
-
       {open && (
-        <nav className="md:hidden border-t border-hairline bg-cream px-6 py-6 flex flex-col gap-5">
+        <nav className="md:hidden border-t border-hairline bg-cream px-6 py-6 flex flex-col items-center gap-5">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -65,13 +69,6 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/book"
-            onClick={() => setOpen(false)}
-            className="label gradient-brand text-white px-6 py-3 text-center"
-          >
-            Book Now
-          </Link>
         </nav>
       )}
     </header>

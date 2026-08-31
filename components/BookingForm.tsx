@@ -122,7 +122,7 @@ export default function BookingForm({
 
       <button
         type="submit"
-        className="label gradient-brand text-white px-10 py-4 hover:opacity-90 transition-opacity cursor-pointer"
+        className="label btn-pill gradient-brand text-white px-10 py-4 cursor-pointer"
       >
         Request Appointment
       </button>
