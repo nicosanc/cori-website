@@ -18,6 +18,8 @@
   --color-blushmist: #f2d8ce;
   --color-taupe: #d4c4b0;
   --color-hairline: #e9ddd6;
+  --color-noir: #241a1c;
+  --color-noir-soft: #37282c;
 
   --font-display: var(--font-cormorant);
   --font-body: var(--font-jost);
@@ -55,39 +57,12 @@ body {
   transform: scale(1.04);
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.no-scrollbar {
+  scrollbar-width: none;
 }
 
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 60s linear infinite;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-
-.arch {
-  border-radius: 100rem 100rem 0 0;
-}
-
-.cameo {
-  border-radius: 50%;
-}
-
-.petal-a {
-  border-radius: 6rem 0.25rem 6rem 0.25rem;
-}
-
-.petal-b {
-  border-radius: 0.25rem 6rem 0.25rem 6rem;
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 .label {

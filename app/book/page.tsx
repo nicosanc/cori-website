@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import BookingForm from "@/components/BookingForm";
 
 export const metadata: Metadata = {
   title: "Book an Appointment | CORBEAUTY Miami",
 };
+
+const expectations = [
+  "We confirm every request personally, usually within a day.",
+  "First visit? Arrive 10 minutes early — we'll walk you through everything.",
+  "Need to reschedule? Just reply to your confirmation.",
+];
 
 export default async function BookPage({
   searchParams,
@@ -13,30 +18,23 @@ export default async function BookPage({
   const service = typeof params.service === "string" ? params.service : "";
 
   return (
-    <div className="mx-auto max-w-6xl px-6 pt-16 md:pt-24 grid md:grid-cols-[2fr_3fr] gap-16 items-start">
-      <div className="hidden md:block md:sticky md:top-40">
-        <div className="arch relative aspect-[3/4] overflow-hidden">
-          <Image
-            src="/images/06_Facetune_06-08-2025-12-41-39.jpg"
-            alt="Corbeauty client"
-            fill
-            className="object-cover object-top"
-            sizes="(min-width: 768px) 40vw, 100vw"
-          />
-        </div>
-        <p className="font-display italic text-2xl text-ink-soft text-center mt-8">
-          We can&rsquo;t wait to meet you.
-        </p>
-      </div>
-      <div>
-        <p className="label text-rose mb-6">Book an appointment</p>
-        <h1 className="font-display text-5xl md:text-6xl leading-[1.05] text-ink">
+    <div className="mx-auto max-w-6xl px-6 pt-16 md:pt-24 grid md:grid-cols-[1fr_1.6fr] gap-12 items-start">
+      <aside className="bg-noir text-cream p-10 md:p-12 md:sticky md:top-32">
+        <p className="label text-blush">Book an appointment</p>
+        <h1 className="font-display text-4xl md:text-5xl leading-[1.05] mt-4">
           Let&rsquo;s find your <em className="gradient-text">time</em>.
         </h1>
-        <p className="mt-8 text-ink-soft leading-relaxed">
-          Tell us what you&rsquo;d like and when works for you — we&rsquo;ll
-          confirm your appointment personally.
-        </p>
+        <ul className="mt-10 space-y-6">
+          {expectations.map((e) => (
+            <li key={e} className="flex gap-4 text-sm text-cream/70 leading-relaxed">
+              <span className="text-blush">—</span>
+              {e}
+            </li>
+          ))}
+        </ul>
+        <p className="label text-cream/40 mt-12">@corbeautymiami</p>
+      </aside>
+      <div>
         <BookingForm initialService={service} />
       </div>
     </div>

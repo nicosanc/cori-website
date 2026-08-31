@@ -2,36 +2,38 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-hairline mt-28 text-center">
-      <div className="mx-auto max-w-3xl px-6 py-16">
-        <p className="gradient-text font-body text-xl tracking-[0.4em] font-normal">
-          CORBEAUTY
+    <footer className="bg-noir text-cream mt-32">
+      <div className="mx-auto max-w-6xl px-6 pt-20 pb-10">
+        <p className="gradient-text font-display italic text-5xl md:text-7xl text-center">
+          Beauty, refined.
         </p>
-        <p className="mt-4 text-sm text-ink-soft">
-          Soft, natural beauty. Curated just for you, in Miami.
-        </p>
-        <nav className="mt-8 flex flex-wrap justify-center gap-8">
-          <Link href="/about" className="label text-ink-soft hover:text-rose transition-colors">
-            About
-          </Link>
-          <Link href="/services" className="label text-ink-soft hover:text-rose transition-colors">
-            Services
-          </Link>
-          <Link href="/book" className="label text-ink-soft hover:text-rose transition-colors">
-            Book
-          </Link>
-          <a
-            href="https://www.instagram.com/corbeautymiami"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="label text-ink-soft hover:text-rose transition-colors"
-          >
-            Instagram
-          </a>
-        </nav>
-        <p className="label text-ink-soft/60 mt-10">
-          © {new Date().getFullYear()} Corbeauty Miami
-        </p>
+        <div className="mt-16 flex flex-col md:flex-row items-center justify-between gap-8 border-t border-white/10 pt-10">
+          <span className="gradient-text font-body tracking-[0.35em] font-normal">
+            CORBEAUTY
+          </span>
+          <nav className="flex flex-wrap justify-center gap-8">
+            <Link href="/about" className="label text-cream/60 hover:text-blush transition-colors">
+              About
+            </Link>
+            <Link href="/services" className="label text-cream/60 hover:text-blush transition-colors">
+              Services
+            </Link>
+            <Link href="/book" className="label text-cream/60 hover:text-blush transition-colors">
+              Book
+            </Link>
+            <a
+              href="https://www.instagram.com/corbeautymiami"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="label text-cream/60 hover:text-blush transition-colors"
+            >
+              Instagram
+            </a>
+          </nav>
+          <p className="label text-cream/40">
+            © {new Date().getFullYear()} Corbeauty Miami
+          </p>
+        </div>
       </div>
     </footer>
   );
