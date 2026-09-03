@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import AmbientVideo from "@/components/AmbientVideo";
-import { beautyServices } from "@/lib/services";
+import { beautyServices, BOOKING_URL } from "@/lib/services";
 
 const tickerItems = [
   "Lash Lift",
@@ -37,12 +37,14 @@ export default function Home() {
             <em className="text-blushmist">Curated just for you.</em>
           </h1>
           <div className="mt-12 flex flex-wrap justify-center items-center gap-8">
-            <Link
-              href="/book"
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="label btn-pill bg-cream text-rosewood px-10 py-4"
             >
               Book Your Appointment
-            </Link>
+            </a>
             <Link
               href="/services"
               className="label text-white border-b border-blushmist pb-1 hover:text-blushmist transition-colors"
@@ -77,9 +79,11 @@ export default function Home() {
         </div>
         <div className="mt-20 grid gap-14 sm:grid-cols-3 sm:gap-8">
           {beautyServices.slice(0, 3).map((s, i) => (
-            <Link
+            <a
               key={s.slug}
-              href={`/book?service=${s.slug}`}
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`group text-center ${i === 1 ? "sm:translate-y-14" : ""}`}
             >
               <div className="arch relative aspect-[3/4] overflow-hidden">
@@ -94,11 +98,10 @@ export default function Home() {
               <h3 className="font-display text-2xl md:text-3xl text-ink mt-6 group-hover:text-rose transition-colors">
                 {s.name}
               </h3>
-              <p className="label text-ink-soft mt-2">from {s.price}</p>
               <span className="label text-rose mt-3 inline-block opacity-0 group-hover:opacity-100 transition-opacity">
                 Book →
               </span>
-            </Link>
+            </a>
           ))}
         </div>
       </section>
@@ -171,12 +174,14 @@ export default function Home() {
             Every appointment is intentional, gentle, and curated — so you
             leave feeling polished.
           </p>
-          <Link
-            href="/book"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="label btn-pill bg-cream text-rosewood px-10 py-4 mt-10 inline-block"
           >
             Schedule Your Experience
-          </Link>
+          </a>
         </div>
       </section>
     </>

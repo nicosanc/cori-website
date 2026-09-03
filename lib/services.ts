@@ -1,10 +1,12 @@
+// All booking happens on the client's Square Appointments site.
+export const BOOKING_URL = "https://corbeautymiami.square.site/";
+
 export type Service = {
   slug: string;
   name: string;
   category: "beauty" | "training";
   blurb: string;
   duration: string;
-  price: string; // placeholder pricing — confirm with client
   image: string;
 };
 
@@ -16,7 +18,6 @@ export const services: Service[] = [
     blurb:
       "A gentle curl and tint that lifts your natural lashes from the root — open, bright eyes with zero daily effort.",
     duration: "60 min",
-    price: "$95",
     image: "/images/03_IMG_1452.png",
   },
   {
@@ -26,7 +27,6 @@ export const services: Service[] = [
     blurb:
       "Brushed-up, fuller-looking brows set in place for weeks. Shaped and tinted to complement your features.",
     duration: "60 min",
-    price: "$85",
     image: "/images/02_IMG_1457.png",
   },
   {
@@ -36,7 +36,6 @@ export const services: Service[] = [
     blurb:
       "Whisper-soft permanent makeup for a powdered, filled-in finish that stays polished morning to night.",
     duration: "2.5 hrs",
-    price: "$350",
     image: "/images/21_powder_brows_b.png",
   },
   {
@@ -46,7 +45,6 @@ export const services: Service[] = [
     blurb:
       "Our signature pairing — lash lift and brow lamination in one appointment for a completely refreshed look.",
     duration: "1.5 hrs",
-    price: "$160",
     image: "/images/24_IMG_1460.png",
   },
   {
@@ -56,7 +54,6 @@ export const services: Service[] = [
     blurb:
       "A soft wash of custom-blended color that enhances your natural lip tone and definition.",
     duration: "2.5 hrs",
-    price: "$400",
     image: "/images/05_Facetune_02-07-2025-17-56-19.jpg",
   },
   {
@@ -66,7 +63,6 @@ export const services: Service[] = [
     blurb:
       "A hands-on, one-day certification covering theory, product knowledge, and live model work.",
     duration: "1 day",
-    price: "$650",
     image: "/images/11_image-asset.jpeg",
   },
   {
@@ -76,7 +72,6 @@ export const services: Service[] = [
     blurb:
       "Master lift, tint, and aftercare from consultation to finish — kit included, live model practice.",
     duration: "1 day",
-    price: "$650",
     image: "/images/17_image-asset.jpeg",
   },
   {
@@ -86,7 +81,6 @@ export const services: Service[] = [
     blurb:
       "Private mentorship tailored to your level — refine technique, speed, and client experience with Cori.",
     duration: "Half day",
-    price: "$450",
     image: "/images/08_image-asset.jpeg",
   },
 ];

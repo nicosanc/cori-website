@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/services";
 
 export default function Footer() {
   return (
@@ -17,9 +18,14 @@ export default function Footer() {
           <Link href="/services" className="label text-ink-soft hover:text-rose transition-colors">
             Services
           </Link>
-          <Link href="/book" className="label text-ink-soft hover:text-rose transition-colors">
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="label text-ink-soft hover:text-rose transition-colors"
+          >
             Book
-          </Link>
+          </a>
           <a
             href="https://www.instagram.com/corbeautymiami"
             target="_blank"

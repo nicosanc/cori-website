@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { beautyServices, trainingServices, type Service } from "@/lib/services";
+import {
+  beautyServices,
+  trainingServices,
+  BOOKING_URL,
+  type Service,
+} from "@/lib/services";
 
 export const metadata: Metadata = {
   title: "Services | CORBEAUTY Miami",
@@ -9,8 +13,10 @@ export const metadata: Metadata = {
 
 function ServiceCard({ service }: { service: Service }) {
   return (
-    <Link
-      href={`/book?service=${service.slug}`}
+    <a
+      href={BOOKING_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group grid grid-cols-[7rem_1fr] sm:grid-cols-[9rem_1fr] gap-6 items-start border-b border-hairline pb-10"
     >
       <div className="relative aspect-[4/5] overflow-hidden">
@@ -27,9 +33,7 @@ function ServiceCard({ service }: { service: Service }) {
           <h3 className="font-display text-2xl md:text-3xl text-ink group-hover:text-rose transition-colors">
             {service.name}
           </h3>
-          <p className="label text-ink-soft">
-            {service.duration} — {service.price}
-          </p>
+          <p className="label text-ink-soft">{service.duration}</p>
         </div>
         <p className="mt-3 text-sm text-ink-soft leading-relaxed max-w-lg">
           {service.blurb}
@@ -38,7 +42,7 @@ function ServiceCard({ service }: { service: Service }) {
           Request Appointment →
         </span>
       </div>
-    </Link>
+    </a>
   );
 }
 
@@ -50,8 +54,8 @@ export default function ServicesPage() {
         Expertise in <em className="gradient-text">everything</em> we do.
       </h1>
       <p className="mt-8 text-ink-soft max-w-lg leading-relaxed">
-        Select a service to request an appointment — we&rsquo;ll confirm your
-        time personally.
+        Select a service to book your appointment through our online
+        scheduling.
       </p>
 
       <section className="mt-20">

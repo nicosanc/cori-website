@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { BOOKING_URL } from "@/lib/services";
 
 export const metadata: Metadata = {
   title: "About | CORBEAUTY Miami",
@@ -103,12 +103,14 @@ export default function AboutPage() {
         <h2 className="font-display text-4xl md:text-5xl text-ink">
           Come see for yourself.
         </h2>
-        <Link
-          href="/book"
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="label btn-pill gradient-brand text-white px-10 py-4 mt-10 inline-block"
         >
           Book Your Appointment
-        </Link>
+        </a>
       </section>
     </>
   );

@@ -37,7 +37,7 @@ Client site for a Miami beauty salon focused on eyebrow/lash work (brow laminati
 
 ## Stack
 
-Next.js 16 (App Router, TS, Tailwind v4), scaffolded with create-next-app. No backend yet. Pages: `/` `/about` `/services` `/book`. `lib/services.ts` holds all service data (slug/name/category/blurb/duration/price/image). Booking flow: service cards link to `/book?service=<slug>`; `components/BookingForm.tsx` pre-selects it.
+Next.js 16 (App Router, TS, Tailwind v4), scaffolded with create-next-app. No backend. Pages: `/` `/about` `/services` (`/book` is a redirect only). `lib/services.ts` holds all service data (slug/name/category/blurb/duration/image — prices removed per client) plus `BOOKING_URL`. Booking: all CTAs open the client's Square Appointments site https://corbeautymiami.square.site/ in a new tab; `/book` redirects there for old links. The old fake `BookingForm.tsx` was deleted.
 
 ## Branches — three design directions (all deployed)
 
@@ -65,17 +65,15 @@ Next.js 16 (App Router, TS, Tailwind v4), scaffolded with create-next-app. No ba
 
 ## Placeholders that need real data before launch
 
-- **All prices and durations in `lib/services.ts` are invented.**
-- **The three training offerings are invented** (old site had none) — confirm names/prices with client.
-- **Booking form does not submit anywhere** — success state is faked client-side. Needs wiring (email to owner or similar).
+- **Durations in `lib/services.ts` are invented** (prices were removed entirely per client — booking/pricing lives on her Square site).
+- **The three training offerings are invented** (old site had none) — confirm names with client; her Square site has a "training" route.
 - About-page copy is adapted from her old site; fine as draft.
 
 ## Remaining TODO
 
-1. Real prices/durations/training from client → `lib/services.ts`
-2. Wire booking form submissions (email her)
-3. Merge `design/soft-immersive` → `main` for production
-4. Custom domain
+1. Confirm durations + training offerings with client → `lib/services.ts`
+2. Merge `design/soft-immersive` → `main` for production
+3. Custom domain
 
 ## Working notes for Claude
 

@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { BOOKING_URL } from "@/lib/services";
 
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/book", label: "Book Now" },
+  { href: BOOKING_URL, label: "Book Now", external: true },
 ];
 
 export default function Nav() {
@@ -27,17 +28,29 @@ export default function Nav() {
           </Link>
         </div>
         <nav className="flex justify-center gap-12 pb-5">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className={`label transition-colors ${
-                pathname === l.href ? "text-rose" : "text-ink-soft hover:text-rose"
-              }`}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) =>
+            l.external ? (
+              <a
+                key={l.href}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="label text-ink-soft hover:text-rose transition-colors"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.href}
+                href={l.href}
+                className={`label transition-colors ${
+                  pathname === l.href ? "text-rose" : "text-ink-soft hover:text-rose"
+                }`}
+              >
+                {l.label}
+              </Link>
+            )
+          )}
         </nav>
       </div>
 
@@ -59,16 +72,29 @@ export default function Nav() {
       </div>
       {open && (
         <nav className="md:hidden border-t border-hairline bg-cream px-6 py-6 flex flex-col items-center gap-5">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className={`label ${pathname === l.href ? "text-rose" : "text-ink-soft"}`}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) =>
+            l.external ? (
+              <a
+                key={l.href}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="label text-ink-soft"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className={`label ${pathname === l.href ? "text-rose" : "text-ink-soft"}`}
+              >
+                {l.label}
+              </Link>
+            )
+          )}
         </nav>
       )}
     </header>
