@@ -39,7 +39,7 @@ function ServiceCard({ service }: { service: Service }) {
           {service.blurb}
         </p>
         <span className="label text-rose mt-4 inline-block opacity-60 group-hover:opacity-100 transition-opacity">
-          Request Appointment →
+          Book Service →
         </span>
       </div>
     </a>
@@ -69,7 +69,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="mt-24">
+      <section id="training" className="mt-24 scroll-mt-32">
         <h2 className="label text-rose border-b border-rose/40 pb-4">
           Professional Training
         </h2>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import AmbientVideo from "@/components/AmbientVideo";
-import { beautyServices, BOOKING_URL } from "@/lib/services";
+import { beautyServices, trainingServices, BOOKING_URL } from "@/lib/services";
 
 const tickerItems = [
   "Lash Lift",
@@ -136,6 +136,44 @@ export default function Home() {
               Our Story
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* In-person trainings */}
+      <section className="mx-auto max-w-6xl px-6 pt-28">
+        <div className="text-center">
+          <p className="label text-rose">Learn from Cori</p>
+          <h2 className="font-display text-4xl md:text-5xl mt-4 text-ink">
+            In-person <em className="gradient-text">training</em>.
+          </h2>
+          <p className="mt-6 text-ink-soft leading-relaxed max-w-xl mx-auto">
+            Small classes, hands-on practice, and certification you can build
+            a business on — taught personally by Cori in Miami.
+          </p>
+        </div>
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
+          {trainingServices.map((t) => (
+            <div
+              key={t.slug}
+              className="border border-hairline bg-cream p-8 text-center"
+            >
+              <p className="label text-ink-soft">{t.duration}</p>
+              <h3 className="font-display text-2xl md:text-3xl text-ink mt-3">
+                {t.name}
+              </h3>
+              <p className="mt-4 text-sm text-ink-soft leading-relaxed">
+                {t.blurb}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-14">
+          <Link
+            href="/services#training"
+            className="label btn-pill gradient-brand text-white px-10 py-4 inline-block"
+          >
+            View Upcoming Trainings
+          </Link>
         </div>
       </section>
 
