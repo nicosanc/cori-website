@@ -37,7 +37,7 @@ Client site for a Miami beauty salon focused on eyebrow/lash work (brow laminati
 
 ## Stack
 
-Next.js 16 (App Router, TS, Tailwind v4), scaffolded with create-next-app. No backend. Pages: `/` `/about` `/services` (`/book` is a redirect only). `lib/services.ts` holds all service data (slug/name/category/blurb/duration/image — prices removed per client) plus `BOOKING_URL`. Booking: all CTAs open the client's Square Appointments site https://corbeautymiami.square.site/ in a new tab; `/book` redirects there for old links. The old fake `BookingForm.tsx` was deleted.
+Next.js 16 (App Router, TS, Tailwind v4), scaffolded with create-next-app. No backend. Pages: `/` `/about` `/services` (`/book` is a redirect only). `lib/services.ts` holds all service data (slug/name/category/blurb/duration/image — prices removed per client) plus `BOOKING_URL`. Booking: all CTAs open the client's Square Appointments site https://corbeautymiami.square.site/ in a new tab; `/book` redirects there for old links. The old fake `BookingForm.tsx` was deleted. Home page has an in-person trainings section (cards from `trainingServices`) whose "View Upcoming Trainings" CTA routes to `/services#training` (anchored section, `scroll-mt-32` for the sticky nav). Services-page card CTA reads "Book Service".
 
 ## Branches — three design directions (all deployed)
 
@@ -66,7 +66,7 @@ Next.js 16 (App Router, TS, Tailwind v4), scaffolded with create-next-app. No ba
 ## Placeholders that need real data before launch
 
 - **Durations in `lib/services.ts` are invented** (prices were removed entirely per client — booking/pricing lives on her Square site).
-- **The three training offerings are invented** (old site had none) — confirm names with client; her Square site has a "training" route.
+- **The three training offerings and their blurbs are invented** (old site had none) — client is sending real descriptions (as of 2026-09-03); they go in `lib/services.ts` blurbs, which feed both the home trainings section and the services page. Her Square site has a "training" route.
 - About-page copy is adapted from her old site; fine as draft.
 
 ## Remaining TODO
