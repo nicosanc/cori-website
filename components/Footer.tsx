@@ -1,9 +1,11 @@
 import Link from "next/link";
+import RoseMist from "@/components/RoseMist";
 import { BOOKING_URL } from "@/lib/services";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-hairline mt-28 text-center">
+    <footer className="relative isolate overflow-hidden border-t border-hairline text-center">
+      <RoseMist />
       <div className="mx-auto max-w-3xl px-6 py-16">
         <p className="gradient-text font-body text-xl tracking-[0.4em] font-normal">
           CORBEAUTY

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import RoseMist from "@/components/RoseMist";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { BOOKING_URL } from "@/lib/services";
@@ -17,7 +18,8 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-hairline">
+    <header className="sticky top-0 z-50 overflow-hidden bg-cream/90 backdrop-blur-sm border-b border-hairline">
+      <RoseMist />
       {/* Desktop: two-tier centered */}
       <div className="hidden md:block">
         <div className="flex justify-center pt-6 pb-4">

@@ -78,16 +78,11 @@ export default function AboutPage() {
       {/* Studio strip */}
       <section className="mx-auto max-w-6xl px-6 pt-28 grid grid-cols-3 gap-4">
         {[
-          "/images/07_image-asset.jpeg",
+          "/images/lash-brow-package-about-01.jpg",
           "/images/14_image-asset.jpeg",
           "/images/09_image-asset.jpeg",
-        ].map((src, i) => (
-          <div
-            key={src}
-            className={`relative aspect-[3/4] overflow-hidden ${
-              i === 1 ? "translate-y-8" : ""
-            }`}
-          >
+        ].map((src) => (
+          <div key={src} className="relative aspect-[3/4] overflow-hidden glow-rose">
             <Image
               src={src}
               alt="Inside the Corbeauty studio"
@@ -99,7 +94,7 @@ export default function AboutPage() {
         ))}
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 pt-32 text-center">
+      <section className="mx-auto max-w-3xl px-6 pt-32 pb-28 text-center">
         <h2 className="font-display text-4xl md:text-5xl text-ink">
           Come see for yourself.
         </h2>

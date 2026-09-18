@@ -48,7 +48,8 @@ function ServiceCard({ service }: { service: Service }) {
 
 export default function ServicesPage() {
   return (
-    <div className="mx-auto max-w-4xl px-6 pt-16 md:pt-24">
+    <>
+    <div className="mx-auto max-w-4xl px-6 pt-16 md:pt-24 pb-28">
       <p className="label text-rose mb-6">Our services</p>
       <h1 className="font-display text-5xl md:text-6xl leading-[1.05] text-ink">
         Expertise in <em className="gradient-text">everything</em> we do.
@@ -84,5 +85,6 @@ export default function ServicesPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

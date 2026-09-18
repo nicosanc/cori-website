@@ -8,51 +8,56 @@ export type Service = {
   blurb: string;
   duration: string;
   image: string;
+  /** Optional alternate image for the home page cards */
+  homeImage?: string;
 };
 
 export const services: Service[] = [
   {
     slug: "lash-lift",
-    name: "Lash Lift",
+    name: "The Cor Lash Lift & Tint",
     category: "beauty",
     blurb:
-      "A gentle curl and tint that lifts your natural lashes from the root — open, bright eyes with zero daily effort.",
+      "Say goodbye to the lash curler and harmful strong-hold mascaras! Using a pure cysteamine-based formula or hybrid (cysteamine + TGA), Cori creates a customized technique for each client’s lash type and eye shape, giving the maximum lifted result for every client. For the finishing touch, add TINT to coat the lashes with pigment and shine from base to tip, giving your lashes as much length as possible. Results typically last 6–8 weeks.",
     duration: "60 min",
-    image: "/images/03_IMG_1452.png",
+    image: "/images/lash-lift-closeup-01.jpg",
+    homeImage: "/images/lash-lift-home-01.jpg",
   },
   {
     slug: "brow-lamination",
-    name: "Brow Lamination",
+    name: "Brow Lamination + Design",
     category: "beauty",
     blurb:
-      "Brushed-up, fuller-looking brows set in place for weeks. Shaped and tinted to complement your features.",
+      "Transform unruly or uneven brows into a fuller, smoother, and more defined shape. Brow lamination gently redirects the hairs to create symmetry, improve fullness, and give your brows a soft, lifted appearance. The service includes professional shaping tailored to your facial features. ADD BROW TINT for a custom color and enhanced definition. Tinting helps emphasize lighter or finer hairs, giving your brows a fuller, more polished result. The shade is carefully selected to complement your natural coloring and desired results.",
     duration: "60 min",
-    image: "/images/02_IMG_1457.png",
+    image: "/images/brow-lamination-01.jpg",
+    homeImage: "/images/brow-lamination-home-01.jpg",
   },
   {
     slug: "powder-brows",
     name: "Powder Brows",
     category: "beauty",
     blurb:
-      "Whisper-soft permanent makeup for a powdered, filled-in finish that stays polished morning to night.",
+      "Powder Brows is a semi-permanent cosmetic tattoo designed to create soft, symmetrical, and beautifully defined brows. Using a gentle shading technique, pigment is gradually built throughout the brow for a polished, powder-filled finish that can range from natural to more defined. Each shape and color is fully customized to complement your facial features, skin tone, and personal style. Once healed, results typically last 1–3 years before a touch-up may be needed.",
     duration: "2.5 hrs",
-    image: "/images/21_powder_brows_b.png",
+    image: "/images/powder-brows-01.jpg",
+    homeImage: "/images/powder-brows-home-01.jpg",
   },
   {
     slug: "lash-brow-package",
     name: "Lash & Brow Lift Package",
     category: "beauty",
     blurb:
-      "Our signature pairing — lash lift and brow lamination in one appointment for a completely refreshed look.",
+      "The ultimate eye-enhancing duo! This package combines The Cor Lash Lift & Tint with our Brow Lamination + Design to create a beautifully lifted, polished, and effortless look. Each service is fully customized to your natural lashes, brows, eye shape, and facial features for the most flattering results. Complete your transformation by adding BROW TINT for enhanced color, fullness, and definition. Perfect for anyone wanting low-maintenance lashes and brows that look naturally put together from the moment you wake up.",
     duration: "1.5 hrs",
-    image: "/images/24_IMG_1460.png",
+    image: "/images/lash-brow-package-01.jpg",
   },
   {
     slug: "lip-blush",
     name: "Lip Blush",
     category: "beauty",
     blurb:
-      "A soft wash of custom-blended color that enhances your natural lip tone and definition.",
+      "Lip Blush is a semi-permanent cosmetic tattoo that enhances the color, shape, and symmetry of your lips. A customized pigment is softly layered into the lips to create a more even, defined, and youthful appearance while still looking like your natural lips. Cori works with each client to fully customize the lip color in consideration of their skin tone and desired result. Once healed, the result is a soft yet noticeable color that can last approximately 2–3 years before a refresh may be desired.",
     duration: "2.5 hrs",
     image: "/images/05_Facetune_02-07-2025-17-56-19.jpg",
   },
