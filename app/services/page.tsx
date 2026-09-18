@@ -74,7 +74,7 @@ export default function ServicesPage() {
         <h2 className="label text-rose border-b border-rose/40 pb-4">
           Professional Training
         </h2>
-        <p className="mt-6 text-sm text-ink-soft max-w-lg leading-relaxed">
+        <p className="mt-6 text-sm text-ink-soft leading-relaxed">
           Learn the craft directly from Cori — small classes, hands-on practice,
           and certification you can build a business on.
         </p>
